@@ -11,6 +11,6 @@ class FailTest extends TestCase
     {
         $response = $this->get('/jugar/18');
 
-        $response->assertStatus(200);
+        $response->assertStatus(500);
     }
 }

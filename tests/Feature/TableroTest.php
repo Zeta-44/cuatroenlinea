@@ -7,7 +7,7 @@ use Tests\TestCase;
 
 class TableroTest extends TestCase
 {
-    protected $link = "http://cuatroenlinea.ddev.site/jugar/17";
+    
 
     public function test_tablero()
     {
@@ -20,16 +20,12 @@ class TableroTest extends TestCase
     public function test_vertical()
     {
         $response = $this->get('/jugar/1111112222221212');
-        $response->assertStatus(200);
+        $response->assertStatus(500);
     }
-    /*
-    no da error pero tampoco debería pasar que se puedan seguir 
-    tirando fichas una vez esté lleno el tablero
-    */
 
     public function test_wheelspin(){
        
-        $codigo = file_get_contents('/1');
-        $this->assertTrue(substr_count($codigo, "hover:animate-spin")===7);
+        $code = file_get_contents('/1');
+        $this->assertTrue(substr_count($code, "hover:animate-spin")===7);
     }
 }
