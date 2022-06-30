@@ -10,7 +10,6 @@ class ConectTest extends TestCase
     public function test_inicio()
     {
         $response = $this->get($this->link);
-
         $response->assertStatus(200);
     }
 }

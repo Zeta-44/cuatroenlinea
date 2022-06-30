@@ -25,7 +25,7 @@ class TableroTest extends TestCase
 
     public function test_wheelspin(){
        
-        $code = file_get_contents('/1');
+        $code = file_get_contents($this->link);
         $this->assertTrue(substr_count($code, "hover:animate-spin")===7);
     }
 }
