@@ -9,14 +9,6 @@ class TableroTest extends TestCase
 {
     protected $link = "http://cuatroenlinea.ddev.site/jugar/17";
 
-
-    public function test_inicio()
-    {
-        $response = $this->get($this->link);
-
-        $response->assertStatus(200);
-    }
-
     public function test_tablero()
     {
         $codigo = file_get_contents($this->link);
@@ -35,11 +27,9 @@ class TableroTest extends TestCase
     tirando fichas una vez esté lleno el tablero
     */
 
-    public function test_fallo()
-    {
-        $response = $this->get('/jugar/18');
-
-        $response->assertStatus(200);
+    public function test_wheelspin(){
+       
+        $codigo = file_get_contents('/1');
+        $this->assertTrue(substr_count($codigo, "hover:animate-spin")===7);
     }
-
 }
