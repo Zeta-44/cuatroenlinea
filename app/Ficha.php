@@ -11,6 +11,9 @@ class Pieza implements InterfacePieza {
     protected string $color;
 
     public function __construct ($colorFicha) {
+        if($colorFicha != "🟥" && $colorFicha != "🟦" )
+            throw new \Exception ("Solo se aceptan fichas de tipo 🟥 o 🟦");
+
         $this->color=$colorFicha;
     }
 
